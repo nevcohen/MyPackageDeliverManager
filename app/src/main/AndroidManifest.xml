@@ -11,17 +11,19 @@
         android:theme="@style/Theme.MyPackageDeliverManager">
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-        </activity>
+            android:exported="false"></activity>
         <activity
-        android:name=".UI.LoginActivity.LoginActivity"
-        android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            android:name=".UI.LoginActivity.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UI.LoginActivity.LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
     </application>
 

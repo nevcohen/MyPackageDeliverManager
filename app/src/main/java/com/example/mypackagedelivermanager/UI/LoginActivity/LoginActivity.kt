@@ -22,6 +22,7 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
+
         val email = findViewById<EditText>(R.id.emailLogin)
         val phoneNum = findViewById<EditText>(R.id.phoneNumberLogin)
         val password = findViewById<EditText>(R.id.passwordLogin)
