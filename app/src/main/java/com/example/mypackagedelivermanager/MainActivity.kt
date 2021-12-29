@@ -1,11 +1,15 @@
 package com.example.mypackagedelivermanager
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
+import com.example.mypackagedelivermanager.UI.LoginActivity.LoginActivity
+import com.example.mypackagedelivermanager.UI.LoginActivity.RegisterActivity
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -43,6 +47,15 @@ class MainActivity : AppCompatActivity() {
                     "Clicked History",
                     Toast.LENGTH_SHORT
                 ).show()
+                R.id.logout -> {
+                    Toast.makeText(
+                        applicationContext,
+                        "Clicked Logout",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    val intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
+                }
             }
 
             true

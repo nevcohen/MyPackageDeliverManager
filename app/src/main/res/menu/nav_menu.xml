@@ -19,4 +19,9 @@
         android:icon="@drawable/ic_baseline_history_24"
         android:title="History" />
 
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/ic_baseline_exit_to_app_24"
+        android:title="Logout" />
+
 </menu>
