@@ -32,7 +32,7 @@ import java.lang.Exception
 class LoginActivity : AppCompatActivity() {
     var firebaseAuth: FirebaseAuth? = null
     var firebaseDatabase: FirebaseDatabase? = null
-    var REQUEST_READ_PHONE_STATE: Int = 1
+    //var REQUEST_READ_PHONE_STATE: Int = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,57 +62,38 @@ class LoginActivity : AppCompatActivity() {
                     phone.requestFocus()
                 }
                 pinCodeString.isEmpty() -> {
-                    val smsManager = SmsManager.getDefault() as SmsManager
-                    val permissionCheck = ContextCompat.checkSelfPermission(
-                        this,
-                        Manifest.permission.READ_PHONE_STATE
-                    )
-
-                    if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-                        ActivityCompat.requestPermissions(
-                            this,
-                            arrayOf(Manifest.permission.READ_PHONE_STATE),
-                            REQUEST_READ_PHONE_STATE
-                        )
-                    } else {
-                        smsManager.sendTextMessage(phoneString, null, "aaa", null, null)
-                        Toast.makeText(applicationContext, "Message Sent", Toast.LENGTH_LONG).show()
-                    }
+//                    val smsManager = SmsManager.getDefault() as SmsManager
+//                    val permissionCheck = ContextCompat.checkSelfPermission(
+//                        this,
+//                        Manifest.permission.READ_PHONE_STATE
+//                    )
+//
+//                    if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
+//                        ActivityCompat.requestPermissions(
+//                            this,
+//                            arrayOf(Manifest.permission.READ_PHONE_STATE),
+//                            REQUEST_READ_PHONE_STATE
+//                        )
+//                    } else {
+//                        smsManager.sendTextMessage(phoneString, null, "aaa", null, null)
+//                        Toast.makeText(applicationContext, "Message Sent", Toast.LENGTH_LONG).show()
+//                    }
 
                 }
-//                else -> {
-//                    firebaseAuth!!.signInWithEmailAndPassword(emailString, passwordString)
-//                        .addOnCompleteListener { task ->
-//                            if (!task.isSuccessful) {
-//                                Toast.makeText(
-//                                    this,
-//                                    "Login Error ,Please try again",
-//                                    Toast.LENGTH_SHORT
-//                                ).show()
-//                            } else {
-//                                val uid = task.result!!.user!!.uid
-//                                firebaseDatabase!!.getReference("users")
-//                                    .child(uid)
-//                                    .addValueEventListener(object : ValueEventListener {
-//                                        override fun onDataChange(dataSnapshot: DataSnapshot) {
-//                                            val intent =
-//                                                Intent(applicationContext, MainActivity::class.java)
-//                                            Toast.makeText(
-//                                                applicationContext,
-//                                                "Login Successful",
-//                                                Toast.LENGTH_SHORT
-//                                            ).show()
-//                                            intent.putExtra("user_id", uid)
-//                                            startActivity(intent)
-//                                            finish()
-//                                        }
-//
-//                                        override fun onCancelled(error: DatabaseError) {}
-//                                    })
-//                            }
-//                        }
-//
-//                }
+                else -> {
+                    if (pinCodeString == "0000") {
+                        val intent =
+                            Intent(applicationContext, MainActivity::class.java)
+                        Toast.makeText(
+                            applicationContext,
+                            "Login Successful",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        intent.putExtra("phone", phoneString)
+                        startActivity(intent)
+                        finish()
+                    }
+                }
             }
 
         }

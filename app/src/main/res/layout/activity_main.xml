@@ -11,17 +11,33 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Activity 1"
-            android:textColor="@color/black"
-            android:textSize="26sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="100dp"
+            android:background="@color/purple_200"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+            <Spinner
+                android:id="@+id/pkt_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginStart="5dp"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:spinnerMode="dialog" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_keyboard_arrow_down_24" />
+        </RelativeLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,6 +27,7 @@ class RegisterActivity : AppCompatActivity() {
         val email = findViewById<EditText>(R.id.textInputEditTextEmail)
         val address = findViewById<EditText>(R.id.textInputEditTextAddress)
         val idNum = findViewById<EditText>(R.id.textInputEditTextID)
+        val phone = findViewById<EditText>(R.id.textInputEditTextPhone)
         val password = findViewById<EditText>(R.id.textInputEditTextPassword)
         val confirmPassword = findViewById<EditText>(R.id.textInputEditTextConfirmPassword)
 
@@ -47,6 +48,7 @@ class RegisterActivity : AppCompatActivity() {
             val emailString = email.text.toString().trim { it <= ' ' }
             val addressString = address.text.toString().trim { it <= ' ' }
             val idNumString = idNum.text.toString().trim { it <= ' ' }
+            val phoneString = phone.text.toString().trim { it <= ' ' }
             val passwordString = password.text.toString().trim { it <= ' ' }
             val confirmPasswordString = confirmPassword.text.toString().trim { it <= ' ' }
 
@@ -79,6 +81,10 @@ class RegisterActivity : AppCompatActivity() {
                     idNum.error = "Invalid ID"
                     idNum.requestFocus()
                 }
+                phoneString.isEmpty() -> {
+                    phone.error = "Please provide your phone number"
+                    phone.requestFocus()
+                }
                 passwordString.isEmpty() -> {
                     password.error = "Please provide password"
                     password.requestFocus()
@@ -108,6 +114,7 @@ class RegisterActivity : AppCompatActivity() {
                                     firstNameString,
                                     lastNameString,
                                     idNumString.toInt(),
+                                    passwordString
                                 )
 
                                 val uid = task.result!!.user!!.uid
@@ -150,7 +157,8 @@ class RegisterActivity : AppCompatActivity() {
         first_name: String,
         last_name: String,
         user_id: Int,
+        phone: String
     ): UserParcel {
-        return UserParcel(address, email, first_name, last_name, user_id)
+        return UserParcel(address, email, first_name, last_name, user_id, phone)
     }
 }

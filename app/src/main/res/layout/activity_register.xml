@@ -35,7 +35,7 @@
             android:id="@+id/textInputLayoutLastName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textInputEditTextLastName"
@@ -51,7 +51,7 @@
             android:id="@+id/textInputLayoutEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textInputEditTextEmail"
@@ -67,7 +67,7 @@
             android:id="@+id/textInputLayoutAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textInputEditTextAddress"
@@ -83,7 +83,7 @@
             android:id="@+id/textInputLayoutID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textInputEditTextID"
@@ -96,10 +96,27 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditTextPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_phone"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="@android:color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textInputEditTextPassword"
@@ -115,7 +132,7 @@
             android:id="@+id/textInputLayoutConfirmPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="10dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textInputEditTextConfirmPassword"
@@ -131,7 +148,7 @@
             android:id="@+id/appCompatButtonRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:background="@color/colorTextHint"
             android:text="@string/text_register" />
 
@@ -139,7 +156,7 @@
             android:id="@+id/appCompatTextViewLoginLink"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:gravity="center"
             android:text="Already a member? Login"
             android:textSize="16sp" />

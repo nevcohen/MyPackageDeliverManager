@@ -21,4 +21,6 @@ data class UserParcel
     val last_name: String,
     @ColumnInfo(name = "user_id")
     val user_id: Int,
+    @ColumnInfo(name = "phone")
+    val phone: String,
 )
