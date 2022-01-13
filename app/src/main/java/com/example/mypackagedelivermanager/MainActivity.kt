@@ -69,16 +69,16 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        getAllPackages(object : GetPkt {
-            override fun onGet(value: Array<Parcel>?) {
-                if (value != null) {
-                    val idPkt: MutableList<String> = mutableListOf()
-                    for (parcel in value)
-                        parcel.pktId?.let { idPkt.add(it) }
-                    parcelSpinner(idPkt.toTypedArray())
-                }
-            }
-        })
+//        getAllPackages(object : GetPkt {
+//            override fun onGet(value: Array<Parcel>?) {
+//                if (value != null) {
+//                    val idPkt: MutableList<String> = mutableListOf()
+//                    for (parcel in value)
+//                        idPkt.add(parcel.pktId.toString())
+//                    parcelSpinner(idPkt.toTypedArray())
+//                }
+//            }
+//        })
 
     }
 
@@ -96,7 +96,10 @@ class MainActivity : AppCompatActivity() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val systemPkts: MutableList<Parcel> = mutableListOf()
                 for (curPkt in dataSnapshot.children) {
-                    curPkt.getValue<Parcel>()?.let { systemPkts.add(it) }
+                    val parcel = curPkt.getValue<Parcel>()
+                    if (parcel != null) {
+                        systemPkts.add(parcel)
+                    }
                 }
                 getNameOfPkt.onGet(systemPkts.toTypedArray())
             }

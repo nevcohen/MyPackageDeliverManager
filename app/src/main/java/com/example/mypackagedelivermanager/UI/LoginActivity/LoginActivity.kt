@@ -82,13 +82,13 @@ class LoginActivity : AppCompatActivity() {
                 }
                 else -> {
                     if (pinCodeString == "0000") {
-                        val intent =
-                            Intent(applicationContext, MainActivity::class.java)
                         Toast.makeText(
                             applicationContext,
                             "Login Successful",
                             Toast.LENGTH_SHORT
                         ).show()
+
+                        val intent = Intent(applicationContext, MainActivity::class.java)
                         intent.putExtra("phone", phoneString)
                         startActivity(intent)
                         finish()
