@@ -34,4 +34,18 @@ class Parcel {
         this.sender = sender
         this.pktId = pktId
     }
+
+    fun showParcel(): String? {
+        return """
+            id : $pktId
+            type : $type
+            weight : $weight
+            sender : $sender
+            addressee : $addressee
+            fragile : $fragile
+            longitude : $longitude
+            latitude : $latitude
+            phone : $phone
+        """
+    }
 }

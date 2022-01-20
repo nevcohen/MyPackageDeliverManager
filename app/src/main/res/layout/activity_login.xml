@@ -12,9 +12,12 @@
     tools:context=".UI.LoginActivity.LoginActivity">
 
     <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="79dp"
+        tools:layout_editor_absoluteY="95dp">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutPhone"
@@ -66,4 +69,17 @@
             android:text="@string/text_not_member"
             android:textSize="16dp" />
     </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <EditText
+        android:id="@+id/emailText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Email Address"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="@+id/linearLayoutCompat"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+        tools:layout_editor_absoluteX="20dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
