@@ -40,6 +40,7 @@ class LoginActivity : AppCompatActivity() {
 
         val phone = findViewById<EditText>(R.id.textInputEditTextPhone)
         val pinCode = findViewById<EditText>(R.id.textInputEditTextPinCode)
+        val email = findViewById<EditText>(R.id.emailText)
 
         firebaseDatabase = FirebaseDatabase.getInstance()
         firebaseAuth = FirebaseAuth.getInstance()
@@ -89,12 +90,14 @@ class LoginActivity : AppCompatActivity() {
                         ).show()
 
                         val intent = Intent(applicationContext, MainActivity::class.java)
-                        intent.putExtra("phone", phoneString)
+                        savedInstanceState?.putString("email", email.toString())
+                       // intent.putExtra("email", email.toString())
                         startActivity(intent)
                         finish()
                     }
                 }
             }
+
 
         }
     }

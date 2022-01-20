@@ -13,6 +13,7 @@
         android:theme="@style/Theme.MyPackageDeliverManager">
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".UI.LoginActivity.RegisterActivity"

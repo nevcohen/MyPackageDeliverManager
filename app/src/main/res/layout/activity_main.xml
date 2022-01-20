@@ -12,12 +12,13 @@
         android:layout_height="match_parent">
 
         <RelativeLayout
+            android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="100dp"
             android:background="@color/purple_200"
             android:orientation="horizontal"
-            tools:ignore="MissingConstraints">
+            tools:ignore="MissingConstraints"
+            >
 
             <Spinner
                 android:id="@+id/pkt_spinner"
@@ -28,7 +29,9 @@
                 android:layout_marginStart="5dp"
                 android:background="@android:color/transparent"
                 android:gravity="center"
-                android:spinnerMode="dialog" />
+                android:spinnerMode="dialog"
+                android:visibility="invisible"
+               />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -38,6 +41,55 @@
                 android:layout_gravity="center"
                 android:src="@drawable/ic_baseline_keyboard_arrow_down_24" />
         </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textParcels"
+            android:layout_width="225dp"
+            android:layout_height="226dp"
+            android:text="welcome, choose an option"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+        <Switch
+            android:id="@+id/avilableSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toTopOf="@+id/textParcels"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.476"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+            android:visibility="invisible"
+            app:layout_constraintVertical_bias="0.84" />
+
+        <Button
+            android:id="@+id/finishAndStoreButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Finish And Store"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textParcels"
+            app:layout_constraintVertical_bias="0.502" />
+
+        <EditText
+            android:id="@+id/test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toTopOf="@+id/avilableSend"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+            tools:ignore="SpeakableTextPresentCheck" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
