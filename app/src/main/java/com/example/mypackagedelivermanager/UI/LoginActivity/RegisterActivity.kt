@@ -19,8 +19,8 @@ import com.google.android.gms.location.LocationServices
 import com.google.firebase.database.FirebaseDatabase
 
 class RegisterActivity : AppCompatActivity() {
-    var mFirebaseAuth: FirebaseAuth? = null
-    var firebaseDatabase: FirebaseDatabase? = null
+    private var mFirebaseAuth: FirebaseAuth? = null
+    private var firebaseDatabase: FirebaseDatabase? = null
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var myLocation: Location
 

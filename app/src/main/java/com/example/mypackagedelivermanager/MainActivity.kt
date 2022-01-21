@@ -27,47 +27,12 @@ class MainActivity : AppCompatActivity() {
     lateinit var toggle: ActionBarDrawerToggle
     var firebaseDatabase: FirebaseDatabase = Firebase.database
     var firebaseAuth = FirebaseAuth.getInstance()
-//    val email = firbaseAuth.currentUser?.email
-    //  val phone = intent.getStringExtra("phone")
-
-
-    val p1 = Parcel(
-        "3",
-        "Envelop",
-        "maor sarusi",
-        "052052",
-        "yes",
-        "4.5",
-        "5.5",
-        "r d ",
-        "MtDC6BqKhXOAqgmAEu4"
-    )
-    val p2 = Parcel(
-        "3",
-        "Envelop",
-        "maor sarusi",
-        "052052",
-        "yes",
-        "4.5",
-        "5.5",
-        "m k ",
-        "MtDI2NIH-Zl-X1K4CG"
-    )
-    val p3 = Parcel(
-        "3",
-        "Envelop",
-        "maor sarusi",
-        "052052",
-        "yes",
-        "4.5",
-        "5.5",
-        "w d",
-        "MtjB41k_JpFBK39nm3W"
-    )
-    var parcels: List<Parcel> = listOf(p1, p2, p3)
     var p: Array<Parcel>? = null
-
+    //  val email = firbaseAuth.currentUser?.email
+    //  val phone = intent.getStringExtra("phone")
     //  private lateinit var model: viewModel
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -76,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         val navView: NavigationView = findViewById(R.id.nav_view)
         val headerView: View = navView.getHeaderView(0)
         val emailText: TextView = headerView.findViewById<TextView>(R.id.user_email)
-        //    val email : TextView = findViewById(R.id.emailText)
+        //  val email : TextView = findViewById(R.id.emailText)
         val text = emailText.text
 
 
@@ -272,41 +237,6 @@ class MainActivity : AppCompatActivity() {
             override fun onCancelled(databaseError: DatabaseError) {}
         }
         firebaseDatabase!!.getReference("packages").addValueEventListener(pktListener)
-    }
-
-    private fun parcelSpinnerForRegister(systemPaks: List<String>) {
-        val arrayAdapter =
-            ArrayAdapter(this, android.R.layout.simple_spinner_item, systemPaks)
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        val addSpinner = findViewById<Spinner>(R.id.pkt_spinner)
-        val availableSwitch: Switch = findViewById<Switch>(R.id.avilableSend)
-        availableSwitch.visibility = View.VISIBLE
-        addSpinner.prompt = "Select package by its id"
-        addSpinner.setSelection(0, false)
-        addSpinner.adapter = arrayAdapter
-        addSpinner.visibility = View.VISIBLE
-        val x: TextView = findViewById<TextView>(R.id.textParcels)
-
-        addSpinner.onItemSelectedListener = object :
-            AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                val parcel: Parcel = parcels[position]
-                val parcelString = fromParcelToString(parcel)
-                addSpinner.setSelection(position)
-                x.text = parcelString
-
-
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-//                pktOwnerName = "Unknown"
-            }
-        }
     }
 
     private fun parcelSpinnerForFriends(systemPaks: List<String>) {

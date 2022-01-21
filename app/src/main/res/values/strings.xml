@@ -42,4 +42,5 @@
     <string name="logout">Log out</string>
     <string name="hint_phone_number">Phone Number</string>
     <string name="hint_phone">Phone Number</string>
+    <string name="get_pincode">Get Pincode</string>
 </resources>

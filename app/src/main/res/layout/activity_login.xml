@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:background="@color/colorTextHint"
-            android:text="@string/text_login" />
+            android:text="@string/get_pincode" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textViewLinkRegister"
@@ -69,17 +69,4 @@
             android:text="@string/text_not_member"
             android:textSize="16dp" />
     </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <EditText
-        android:id="@+id/emailText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Email Address"
-        android:inputType="textEmailAddress"
-        android:maxLines="1"
-        android:textColor="@android:color/black"
-        app:layout_constraintTop_toTopOf="@+id/linearLayoutCompat"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
-        tools:layout_editor_absoluteX="20dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
