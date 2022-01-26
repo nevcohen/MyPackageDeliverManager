@@ -3,6 +3,7 @@ package com.example.mypackagedelivermanager.Entities
 class User {
     var email: String? = null
     var first_name: String? = null
+    var key: String? = null
     var last_name: String? = null
     var latitude: String? = null
     var longitude: String? = null

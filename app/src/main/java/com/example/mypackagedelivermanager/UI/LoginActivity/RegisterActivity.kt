@@ -120,6 +120,7 @@ class RegisterActivity : AppCompatActivity() {
                                 )
 
                                 val uid = task.result!!.user!!.uid
+                                currentUser.key = uid
                                 firebaseDatabase!!.getReference("users").child(uid)
                                     .setValue(currentUser)
                                     .addOnSuccessListener {

@@ -35,7 +35,7 @@ class LoginActivity : AppCompatActivity() {
     private var mFirebaseAuth: FirebaseAuth? = null
     private var verificationId: String? = null
     private var userPhone: String? = null
-    private var userId: String? = null
+    private var userKey: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,9 +74,9 @@ class LoginActivity : AppCompatActivity() {
                 }
                 pinCodeString.isEmpty() -> {
                     getUserByPhone(object : GetUser {
-                        override fun onGetEmail(value: String?) {
-                            if (value != null) {
-                                userId = value
+                        override fun onGetUserKey(key: String?) {
+                            if (key != null) {
+                                userKey = key
                                 sendVerificationCode(userPhone!!)
                             } else {
                                 Toast.makeText(
@@ -114,7 +114,7 @@ class LoginActivity : AppCompatActivity() {
                     // if the code is correct and the task is successful
                     // we are sending our user to new activity.
                     val i = Intent(applicationContext, MainActivity::class.java)
-                    i.putExtra("uid", userId)
+                    i.putExtra("user_key", userKey)
                     startActivity(i)
                     finish()
                 } else {
@@ -202,15 +202,15 @@ class LoginActivity : AppCompatActivity() {
     private fun getUserByPhone(getCurUser: GetUser) {
         val userListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                var curUserId: String? = null
+                var curUserKey: String? = null
                 for (curUser in dataSnapshot.children) {
                     val user = curUser.getValue<User>()
                     if (user != null && user.phone == userPhone) {
-                        curUserId = curUser.key
+                        curUserKey = user.key
                         break
                     }
                 }
-                getCurUser.onGetEmail(curUserId)
+                getCurUser.onGetUserKey(curUserKey)
             }
 
             override fun onCancelled(databaseError: DatabaseError) {}
@@ -220,7 +220,7 @@ class LoginActivity : AppCompatActivity() {
 }
 
 interface GetUser {
-    fun onGetEmail(value: String?)
+    fun onGetUserKey(key: String?)
 }
 
 

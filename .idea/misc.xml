@@ -3,20 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/maor/AndroidStudioProjects/MyPackageDeliverManager/app/src/main/res/layout-w936dp/simple_spinner_dropdown.xml" value="0.190625" />
-        <entry key="..\:/Users/maor/AndroidStudioProjects/MyPackageDeliverManager/app/src/main/res/layout-w936dp/spinner_text.xml" value="0.190625" />
-        <entry key="..\:/Users/maor/AndroidStudioProjects/MyPackageDeliverManager/app/src/main/res/layout/activity_login.xml" value="0.2613168724279835" />
-        <entry key="..\:/Users/maor/AndroidStudioProjects/MyPackageDeliverManager/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Users/maor/AndroidStudioProjects/MyPackageDeliverManager/app/src/main/res/layout/activity_register.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/maor/AndroidStudioProjects/MyPackageDeliverManager/app/src/main/res/layout/nav_header.xml" value="0.13229166666666667" />
         <entry key="..\:/Users/nevoc/kotlinWork/MyPackageDeliverManager/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/nevoc/kotlinWork/MyPackageDeliverManager/app/src/main/res/layout-w936dp/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/nevoc/kotlinWork/MyPackageDeliverManager/app/src/main/res/layout-w936dp/simple_spinner_dropdown.xml" value="0.10625" />
         <entry key="..\:/Users/nevoc/kotlinWork/MyPackageDeliverManager/app/src/main/res/layout-w936dp/spinner_text.xml" value="0.10625" />
+        <entry key="..\:/Users/nevoc/kotlinWork/MyPackageDeliverManager/app/src/main/res/layout/activity_history.xml" value="0.184375" />
         <entry key="..\:/Users/nevoc/kotlinWork/MyPackageDeliverManager/app/src/main/res/layout/activity_login.xml" value="0.4" />
         <entry key="..\:/Users/nevoc/kotlinWork/MyPackageDeliverManager/app/src/main/res/layout/activity_main.xml" value="0.11865942028985507" />
         <entry key="..\:/Users/nevoc/kotlinWork/MyPackageDeliverManager/app/src/main/res/layout/activity_register.xml" value="0.2" />
+        <entry key="..\:/Users/nevoc/kotlinWork/MyPackageDeliverManager/app/src/main/res/layout/activity_register_nav.xml" value="0.16510416666666666" />
         <entry key="..\:/Users/nevoc/kotlinWork/MyPackageDeliverManager/app/src/main/res/layout/nav_header.xml" value="0.536" />
+        <entry key="..\:/Users/nevoc/kotlinWork/MyPackageDeliverManager/app/src/main/res/layout/parcel_cv.xml" value="0.184375" />
         <entry key="..\:/Users/nevoc/kotlinWork/MyPackageDeliverManager/app/src/main/res/menu/nav_menu.xml" value="0.20416666666666666" />
       </map>
     </option>

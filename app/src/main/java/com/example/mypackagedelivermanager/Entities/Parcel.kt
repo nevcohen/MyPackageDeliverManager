@@ -21,8 +21,7 @@ class Parcel {
         fragile: String?,
         longitude: String?,
         latitude: String?,
-        sender: String?,
-        pktId: String?
+        sender: String?
     ) {
         this.weight = weight
         this.type = type
@@ -32,7 +31,6 @@ class Parcel {
         this.longitude = longitude
         this.latitude = latitude
         this.sender = sender
-        this.pktId = pktId
     }
 
     fun showParcel(): String? {
