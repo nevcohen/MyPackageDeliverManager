@@ -1,5 +1,6 @@
 package com.example.mypackagedelivermanager.Entities
 
+//
 class Parcel {
     var weight: String? = null
     var type: String? = null
