@@ -34,7 +34,7 @@ class LoginActivity : AppCompatActivity() {
     private var firebaseDatabase: FirebaseDatabase? = null
     private var mFirebaseAuth: FirebaseAuth? = null
     private var verificationId: String? = null
-    private var userPhone: String? = null
+    private var userPhone: String? = "+972"
     private var userKey: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,7 +64,8 @@ class LoginActivity : AppCompatActivity() {
         val buttonLogin: AppCompatButton = findViewById(R.id.appCompatButtonLogin)
         buttonLogin.setOnClickListener {
 
-            userPhone = phone.text.toString().trim { it <= ' ' }
+            userPhone += phone.text.toString().drop(1).trim { it <= ' ' }
+
             val pinCodeString = pinCode.text.toString().trim { it <= ' ' }
 
             when {
@@ -77,6 +78,7 @@ class LoginActivity : AppCompatActivity() {
                         override fun onGetUserKey(key: String?) {
                             if (key != null) {
                                 userKey = key
+
                                 sendVerificationCode(userPhone!!)
                             } else {
                                 Toast.makeText(

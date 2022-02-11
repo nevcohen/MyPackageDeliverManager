@@ -94,6 +94,7 @@ class MainActivity : AppCompatActivity() {
                     ).show()
                     val intent = Intent(this, LoginActivity::class.java)
                     startActivity(intent)
+                    finish()
                 }
             }
             val fragmentTransaction = supportFragmentManager.beginTransaction()
